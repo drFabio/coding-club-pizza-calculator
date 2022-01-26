@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--TODO: mover para arquivo externo-->
+    <style></style>
+  </head>
+  <body>
+    <ul id="sliceList"></ul>
+    <!-- Linka a acao de submeter um formulário a funcao de nome handlePizzaForm -->
+    <form onsubmit="handlePizzaForm(event)">
+      <label for="flavorQuantity">Quanto</label>
+      <input id="flavorQuantity" type="number" name="flavorQuantity" />
+      <label for="flavors">Sabor</label>
+      <select id="flavors" name="flavors">
+        <option value="margherita">Margherita</option>
+        <option value="mushroomAndHam">Regina</option>
+        <option value="veggie">Vegetariana</option>
+      </select>
+      <button type="submit">Add</button>
+    </form>
+  </body>
+  <script type="text/javascript">
+    // saber que precisava do event, vindo do onSubmit
+    function handlePizzaForm(event) {
+      // mapa de sabores em relacao a o sistema interno e o que o usuário espera
+      const flavorMap = {
+        margherita: "Margherita",
+        mushroomAndHam: "Regina",
+        veggie: "Vegetariana",
+      };
+      /**
+       *  pausa a submissao do formulario para alguma página
+       * permitindo que a gente modifique
+       */
+      event.preventDefault();
+      /**
+       *  Constrói um formulário que eu possa manipular
+       */
+      const formData = new FormData(event.target);
+      // Loga no console do chrome (ctrl + shift +i)
+      console.log({
+        flavor: formData.get("flavors"),
+        flavorQuantity: formData.get("flavorQuantity"),
+      });
+      // pega valores do fomulario
+      const quantity = formData.get("flavorQuantity");
+      const flavor = formData.get("flavors");
+      /* 
+       Criando HTML com o Javascript de forma
+       laborosa
+       1 Criar qualquer coisa
+       2 criar algo com o conteúdo
+       3 criar algo com o conteúdo que o usuário espera
+      */
+      // Acha o elemento com o id sliceList
+      const targetList = document.querySelector("#sliceList");
+      // cria uma tag li
+      const listItem = document.createElement("li");
+      // coloca o valor do texto da tag li
+      listItem.innerText = quantity + " " + flavorMap[flavor];
+      // add a tag li no elemento com o id sliceList
+      targetList.appendChild(listItem);
+    }
+  </script>
+  <!--TODO: mover para arquivo externo-->
+</html>
