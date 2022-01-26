@@ -10,10 +10,11 @@ Calculadora de pizza, utilizando-se de HTML, CSS e Javascript
 
 Ex: Marguerita 2X, Calabresa 1X, Lombo 3X.
 
-Resultado:
+Resultado possível 1:
 Meio marguerita, Meio Lombo
 Inteira de calabresa
 
+Resultado possível 2:
 Meio marguerita, Meio Calabresa
 Inteira Lombo
 
