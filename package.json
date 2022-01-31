@@ -1,0 +1,25 @@
+{
+  "name": "codingclub2022aula2",
+  "version": "1.0.0",
+  "description": "## Aula",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "node-static": "^0.7.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drFabio/coding-club-pizza-calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drFabio/coding-club-pizza-calculator/issues"
+  },
+  "homepage": "https://github.com/drFabio/coding-club-pizza-calculator#readme"
+}
