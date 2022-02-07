@@ -12,14 +12,19 @@
     <ul id="sliceList"></ul>
     <script type="text/javascript" src="./index.js"></script>
     <form onsubmit="handlePizzaForm(event)">
-      <label for="flavorQuantity">Quanto</label>
-      <input id="flavorQuantity" type="number" name="flavorQuantity" />
-      <label for="flavors">Sabor</label>
-      <select id="flavors" name="flavors">
-        <option value="margherita">Margherita</option>
-        <option value="mushroomAndHam">Regina</option>
-        <option value="veggie">Vegetariana</option>
-      </select>
+      <div class="formContent">
+        <label for="flavorQuantity">Quanto</label>
+        <input id="flavorQuantity" type="number" name="flavorQuantity" />
+      </div>
+      <div class="formContent">
+        <label for="flavors">Sabor</label>
+        <select id="flavors" name="flavors">
+          <option value="margherita">Margherita</option>
+          <option value="mushroomAndHam">Regina</option>
+          <option value="veggie">Vegetariana</option>
+        </select>
+      </div>
+
       <button type="submit">Add</button>
     </form>
 
