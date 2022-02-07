@@ -1,3 +1,54 @@
+/**
+ * Opa tudo bom?
+ * Tomei a liberdade de anotar o código:
+ * 🧐 = Pode ignorar se quiser, é sofisticado
+ * 😄 = Informação
+ * 👀 = dica importante para lição de casa
+ */
+
+/**
+ * 😄 = Esse nome, sem nenhum sinal correpsonde as tags HTML
+ */
 label {
   font-weight: bold;
+  color: red;
+  border-bottom: 1px solid black;
+  margin-bottom: 0.5rem;
+}
+/**
+ * 😄 = Esse nome, [entre chaves] corresponde à atributos
+ */
+label[for="flavors"] {
+  color: green;
+}
+
+h3 {
+  color: blue;
+}
+/**
+ * 😄 = Isso ilustra o box-model, estamos com width, border e padding.
+ Cheque no editor como isso se parece
+ */
+form {
+  /**
+ * 😄 = A gente pode mudar como o tamanho é contado.
+ Mudando o box-sizing
+ */
+  box-sizing: border-box;
+  width: 400px;
+  padding: 2rem;
+  border: 1px solid black;
+  margin: 1rem;
+}
+/**
+ * 😄 = .classe é como pegamos coias com a clase após o ponto. Veja no Html onde está formContent
+ */
+.formContent {
+  /**
+ * 😄 = Uma cor só para ajudar à debuggar
+ */
+  background-color: hotpink;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
 }
