@@ -4,6 +4,9 @@
  * @todo Na próxima etapa precisamos receber uma lista de fatias, nao só um número
  */
 function calculateNumberOfPizzas(numberOfSlices) {
+  /**
+   * 😄 = Math.ceil arredonda para cima
+   */
   return Math.ceil(numberOfSlices / 8);
 }
 
