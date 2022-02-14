@@ -1,7 +1,8 @@
 /**
  * 😄 = A lógica principal da nossa calculadora de pizzas
+ *
+ * @todo Na próxima etapa precisamos receber uma lista de fatias, nao só um número
  */
-
 function calculateNumberOfPizzas(numberOfSlices) {
   return Math.ceil(numberOfSlices / 8);
 }
