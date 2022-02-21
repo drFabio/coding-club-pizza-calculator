@@ -3,8 +3,14 @@
  *
  * @todo Na próxima etapa precisamos receber uma lista de fatias, nao só um número
  */
-function calculateNumberOfPizzas(pizzaMenu, peopleOrders) {
+function calculateNumberOfPizzas(pizzaMenu, peopleOrders, costs = {}) {
   const slicesMap = {};
+  /**
+   * 😄 = Essa é a taxa fixa do entregador
+   */
+  const deliveryCost = costs.deliveryCost || 0;
+
+  const inHousePrice = costs.inHousePrice || 0;
 
   /**
    *  🧐 = É um loop de todos os menus
@@ -25,7 +31,10 @@ function calculateNumberOfPizzas(pizzaMenu, peopleOrders) {
   Object.keys(slicesMap).forEach((flavor) => {
     const sumOfSlices = slicesMap[flavor];
     const numberOfPizzas = Math.ceil(sumOfSlices / 8);
-    bill[flavor] = numberOfPizzas * pizzaMenu[flavor].price;
+    bill[flavor] = (
+      numberOfPizzas * pizzaMenu[flavor].price * (1 + inHousePrice) +
+      deliveryCost
+    ).toFixed(2);
   });
   return bill;
 }
