@@ -3,11 +3,31 @@
  *
  * @todo Na próxima etapa precisamos receber uma lista de fatias, nao só um número
  */
-function calculateNumberOfPizzas(numberOfSlices) {
+function calculateNumberOfPizzas(pizzaMenu, peopleOrders) {
+  const slicesMap = {};
+
   /**
-   * 😄 = Math.ceil arredonda para cima
+   *  🧐 = É um loop de todos os menus
    */
-  return Math.ceil(numberOfSlices / 8);
+  for (const currentOrder of peopleOrders) {
+    const currentFlavor = currentOrder.flavor;
+    const slices = currentOrder.quantity;
+    if (!slicesMap[currentFlavor]) {
+      slicesMap[currentFlavor] = 0;
+    }
+    slicesMap[currentFlavor] += slices;
+  }
+  const bill = {};
+  /**
+   *  🧐 = Uma outra forma de fazer um loop , dessa vez em um
+   * dicionário
+   */
+  Object.keys(slicesMap).forEach((flavor) => {
+    const sumOfSlices = slicesMap[flavor];
+    const numberOfPizzas = Math.ceil(sumOfSlices / 8);
+    bill[flavor] = numberOfPizzas * pizzaMenu[flavor].price;
+  });
+  return bill;
 }
 
 /**
